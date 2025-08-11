@@ -30,6 +30,13 @@ app.use(morgan("dev"));
 app.use("/api/v1/auth", userRoute);
 app.use("/api/v1/post", postRoute);
 
+//home
+app.get("/", (req, res) => {
+  res.status(200).send({
+    "success": true,
+    "message": "Node Server Running"
+  })
+})
 const PORT = process.env.PORT || 8000;
 
 app.listen(PORT, () => {
